@@ -1,10 +1,6 @@
 ---
 name: Lint checks
 
-permissions:
-  statuses: write
-  contents: read
-
 on:
   push:
     branches-ignore:
@@ -17,6 +13,9 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      contents: read
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
