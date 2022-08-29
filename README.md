@@ -13,6 +13,8 @@ for common linters (see [list](#available-problem-matchers) below).
 
 ### Available problem matchers
 
+<!-- textlint-disable textlint-rule-terminology -->
+
 * actionlint
 * ansible-lint (requires `--parseable` flag or `parseable: true` in config)
 * black
@@ -35,6 +37,8 @@ for common linters (see [list](#available-problem-matchers) below).
 * vulture_severity
 * yamllint (requires `--format parsable`)
 
+<!-- textlint-enable textlint-rule-terminology -->
+
 ## Sample usage
 
 ```yaml
@@ -56,10 +60,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Enable annotations
         uses: wanduow/action-lint-annotations@v1
       - name: Lint code base
-        uses: github/super-linter@v4
+        uses: github/super-linter/slim@v4
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
