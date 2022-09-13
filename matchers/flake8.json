@@ -2,10 +2,10 @@
     "problemMatcher": [
         {
             "owner": "flake8",
-            "severity": "warning",
+            "severity": "error",
             "pattern": [
                 {
-                    "regexp": "(\\S+):(\\d+):(\\d+): ([A-Z]\\d+) (.*)",
+                    "regexp": "^(.+?):(\\d+):(\\d+): (F\\d+) (.+)$",
                     "file": 1,
                     "line": 2,
                     "column": 3,
